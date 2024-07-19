@@ -1,8 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-section-name" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Section Title</title>
+  <title>Task Bug Example</title>
 
-  <p> Text of section. </p>
+  <p>
+    Example of trying to use fill-in exercise inside of task.  The fill-in does not render the blank or "Check Me" button when used in a task.  However, when the same code is used not in a task it renders correctly.
+  </p>
 
+  <exercises>
+    <exercise label="ex-an-exercise-with-tasks">
+      <title>Exercise Title</title>
+      <introduction>
+        <p>
+          Exercise introduction.
+        </p>
+      </introduction>
+      <task label="ex-part-a">
+        <title>Task A Title</title>
+        <statement correct="no">
+          <p>
+            Task a statement.
+          </p>
+        </statement>
+      </task>
+
+      <task label="ex-part-b">
+        <title>Fill-in in a Task</title>
+        <statement>
+          <p>
+            Statement goes here with a <var width="28" /> blank.
+          </p>
+        </statement>
+        <setup>
+          <var>
+            <condition string=".*">
+                <feedback>
+                  <p>
+                    There is no right answer ;)
+                  </p>
+                </feedback>
+              </condition>
+          </var>
+        </setup>
+      </task>
+
+      <task label="ex-part-c">
+        <title>Task C Title</title>
+        <statement correct="no">
+          <p>
+            Task c statement.
+          </p>
+        </statement>
+      </task>
+    </exercise>
+
+    <exercise label="ex-fill-in-not-in-task">
+      <title>Fill-In not in a task</title>
+      <statement>
+        <p>
+          Statement goes here with a <var width="28" /> blank.
+        </p>
+      </statement>
+      <setup>
+        <var>
+          <condition string=".*">
+              <feedback>
+                <p>
+                  There is no right answer ;)
+                </p>
+              </feedback>
+            </condition>
+        </var>
+      </setup>
+    </exercise>
+  </exercises>
 </section>
